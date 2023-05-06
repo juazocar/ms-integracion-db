@@ -27,6 +27,7 @@ public class InstrumentoController {
     public List<Instrumento> findAll() {
         return instrumentoService.obtenerTodosLosInstrumentos();
     }
+    
 
     @GetMapping(path = "/get-all-categoria", produces = {"application/json"})
     public List<Categoria> findAllCategoria() {
