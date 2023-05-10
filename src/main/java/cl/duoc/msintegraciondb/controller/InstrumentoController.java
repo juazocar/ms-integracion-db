@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cl.duoc.msintegraciondb.model.entities.Categoria;
-import cl.duoc.msintegraciondb.model.entities.Instrumento;
+import cl.duoc.msintegraciondb.model.dto.InstrumentoDTO;
 import cl.duoc.msintegraciondb.service.InstrumentoService;
 
 @RestController
@@ -18,19 +17,15 @@ public class InstrumentoController {
     @Autowired
     InstrumentoService instrumentoService;
     
-    @GetMapping(path = "/saludo", produces = { "application/json" })
-    public String getSaludo(){
-        return instrumentoService.getSaludo();
+    @GetMapping(path = "/health-check", produces = { "application/json" })
+    public String healthCheck(){
+        return "OK";
     }
 
     @GetMapping(path = "/get-all", produces = {"application/json"})
-    public List<Instrumento> findAll() {
+    public List<InstrumentoDTO> findAll() {
         return instrumentoService.obtenerTodosLosInstrumentos();
     }
     
 
-    @GetMapping(path = "/get-all-categoria", produces = {"application/json"})
-    public List<Categoria> findAllCategoria() {
-        return instrumentoService.obtenerTodasLasCategorias();
-    }
 }
