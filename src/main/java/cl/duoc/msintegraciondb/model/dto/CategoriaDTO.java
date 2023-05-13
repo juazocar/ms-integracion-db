@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CategoriaDTO {
     
-    @JsonProperty("id_categoria")
+    @JsonProperty("category_id")
     private int id;
-    @JsonProperty("nombre_categoria")
+    @JsonProperty("category_name")
     private String nombre;
 }
